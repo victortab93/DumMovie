@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Preference</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<!-- Include your app.js file -->
+
+</head>
+<body ng-app="myApp">
+    <div ng-controller="UserTypePreferenceController">
+        <h2 class="mt-4"></h2>
+        <div class="card mt-4">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="name">Preference:</label>
+              <select class="form-control" id="preferenceInput" ng-model="newPreference" required>
+                <option ng-repeat="option in preferenceOptions" value="{{option.typePreferenceId}}">{{option.name}}</option>
+              </select>
+            </div>  
+            <button type="button" class="btn btn-primary" ng-click="add()">Agregar</button>          
+            <button class="btn btn-primary" ng-click="goBack()">Back</button>
+          </div>
+        </div>
+      </div>
+      
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="app.js"></script>
+  <!-- Include usercontroller.js -->
+  <script src="UserEditController.js"></script>
+  <script src="UserTypePreferenceController.js"></script>
+</body>
+</html>
